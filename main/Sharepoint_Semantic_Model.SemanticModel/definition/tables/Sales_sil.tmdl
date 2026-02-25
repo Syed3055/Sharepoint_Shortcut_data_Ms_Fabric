@@ -1,0 +1,150 @@
+table Sales_sil
+	lineageTag: fc1e7888-4cc0-46b5-a398-1b6af461900c
+	sourceLineageTag: [SharePoint_Data_Silver].[Sales_sil]
+
+	column Customer_ID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: cd24efc9-33a8-445e-97a7-dae57a4cbdfb
+		sourceLineageTag: Customer_ID
+		summarizeBy: none
+		sourceColumn: Customer_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d648652f-5359-4e1c-b5ef-5ea71ef58709
+		sourceLineageTag: Name
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7eb3674a-a052-45eb-bfe2-cd049f80a06d
+		sourceLineageTag: Gender
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 96371374-6699-4f72-a2ee-d799476d4e47
+		sourceLineageTag: Age
+		summarizeBy: none
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 50b48d3e-6181-4ef6-ab71-21ac70f62067
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Signup_Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: c29aa94b-23a6-4914-812a-8852fa86e73b
+		sourceLineageTag: Signup_Date
+		summarizeBy: none
+		sourceColumn: Signup_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Purchase_Date
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: date
+		lineageTag: 4e9945b8-5662-424d-b317-03e185f25701
+		sourceLineageTag: Last_Purchase_Date
+		summarizeBy: none
+		sourceColumn: Last_Purchase_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Purchase_Amount
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 2b928b5c-56eb-4d5b-a2d7-79ece5b081a6
+		sourceLineageTag: Purchase_Amount
+		summarizeBy: sum
+		sourceColumn: Purchase_Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Feedback_Score
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 7b96784a-51e5-4765-a97e-16bb08d16faa
+		sourceLineageTag: Feedback_Score
+		summarizeBy: sum
+		sourceColumn: Feedback_Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Email
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e89b2e81-a181-4112-9aae-3595fb313ae5
+		sourceLineageTag: Email
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phone_Number
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bigint
+		lineageTag: 4fa6e23c-0af0-4c7c-8e8e-3c61933d70ca
+		sourceLineageTag: Phone_Number
+		summarizeBy: sum
+		sourceColumn: Phone_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ffd5104d-300a-4434-b3ba-d06ed0a0bfc5
+		sourceLineageTag: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column __filepath__
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3c4f4405-2419-4f53-9243-979b9a598ae2
+		sourceLineageTag: __filepath__
+		summarizeBy: none
+		sourceColumn: __filepath__
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sales_sil = entity
+		mode: directLake
+		source
+			entityName: Sales_sil
+			schemaName: SharePoint_Data_Silver
+			expressionSource: DatabaseQuery
+
+	annotation PBI_ResultType = Table
+

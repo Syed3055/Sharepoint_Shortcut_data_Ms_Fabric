@@ -1,0 +1,122 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "6779a2fc9d63b8532bd2",
+  "position": {
+    "x": 51.337255857675032,
+    "y": 238.14782578421472,
+    "z": 1,
+    "height": 312.30163980085644,
+    "width": 489.12996553284819,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sales_sil"
+                    }
+                  },
+                  "Property": "City"
+                }
+              },
+              "queryRef": "Sales_sil.City",
+              "nativeQueryRef": "City",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Sales_sil"
+                        }
+                      },
+                      "Property": "Customer_ID"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Sales_sil.Customer_ID)",
+              "nativeQueryRef": "Count of Customer_ID"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Sales_sil"
+                      }
+                    },
+                    "Property": "Customer_ID"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "96084e02b0c05532cb88",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Sales_sil"
+              }
+            },
+            "Property": "City"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e3e335e7b1774b37029d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Sales_sil"
+                  }
+                },
+                "Property": "Customer_ID"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}
