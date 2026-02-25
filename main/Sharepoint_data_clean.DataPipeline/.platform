@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Sharepoint_data_clean"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f291455d-83fe-a9a5-4895-0b189e271c6e"
+  }
+}
